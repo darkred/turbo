@@ -143,15 +143,12 @@ graph TD
     Item11["export a"];
     Item12;
     Item12["export b"];
-    Item2 -.-> Item2;
     Item2 --> Item1;
-    Item3 -.-> Item3;
     Item3 --> Item1;
     Item3 --> Item2;
     Item4 --> Item1;
     Item4 --> Item2;
     Item4 --> Item3;
-    Item5 -.-> Item5;
     Item5 --> Item1;
     Item5 --> Item2;
     Item5 --> Item3;
@@ -159,7 +156,6 @@ graph TD
     Item6 --> Item2;
     Item6 --> Item3;
     Item6 --> Item5;
-    Item6 -.-> Item6;
     Item7 --> Item6;
     Item7 --> Item1;
     Item7 --> Item2;
@@ -167,9 +163,9 @@ graph TD
     Item7 --> Item4;
     Item7 --> Item5;
     Item8 --> Item6;
-    Item8 -.-> Item8;
     Item9 --> Item6;
-    Item9 -.-> Item9;
+    Item11 --> Item8;
+    Item12 --> Item9;
 ```
 # Phase 3
 ```mermaid
@@ -189,15 +185,12 @@ graph TD
     Item11["export a"];
     Item12;
     Item12["export b"];
-    Item2 -.-> Item2;
     Item2 --> Item1;
-    Item3 -.-> Item3;
     Item3 --> Item1;
     Item3 --> Item2;
     Item4 --> Item1;
     Item4 --> Item2;
     Item4 --> Item3;
-    Item5 -.-> Item5;
     Item5 --> Item1;
     Item5 --> Item2;
     Item5 --> Item3;
@@ -205,7 +198,6 @@ graph TD
     Item6 --> Item2;
     Item6 --> Item3;
     Item6 --> Item5;
-    Item6 -.-> Item6;
     Item7 --> Item6;
     Item7 --> Item1;
     Item7 --> Item2;
@@ -213,9 +205,9 @@ graph TD
     Item7 --> Item4;
     Item7 --> Item5;
     Item8 --> Item6;
-    Item8 -.-> Item8;
     Item9 --> Item6;
-    Item9 -.-> Item9;
+    Item11 --> Item8;
+    Item12 --> Item9;
 ```
 # Phase 4
 ```mermaid
@@ -235,15 +227,12 @@ graph TD
     Item11["export a"];
     Item12;
     Item12["export b"];
-    Item2 -.-> Item2;
     Item2 --> Item1;
-    Item3 -.-> Item3;
     Item3 --> Item1;
     Item3 --> Item2;
     Item4 --> Item1;
     Item4 --> Item2;
     Item4 --> Item3;
-    Item5 -.-> Item5;
     Item5 --> Item1;
     Item5 --> Item2;
     Item5 --> Item3;
@@ -251,7 +240,6 @@ graph TD
     Item6 --> Item2;
     Item6 --> Item3;
     Item6 --> Item5;
-    Item6 -.-> Item6;
     Item7 --> Item6;
     Item7 --> Item1;
     Item7 --> Item2;
@@ -259,17 +247,15 @@ graph TD
     Item7 --> Item4;
     Item7 --> Item5;
     Item8 --> Item6;
-    Item8 -.-> Item8;
     Item9 --> Item6;
-    Item9 -.-> Item9;
+    Item11 --> Item8;
+    Item12 --> Item9;
     Item10 --> Item1;
     Item10 --> Item2;
     Item10 --> Item3;
     Item10 --> Item4;
     Item10 --> Item5;
     Item10 --> Item7;
-    Item11 --> Item8;
-    Item12 --> Item9;
 ```
 # Final
 ```mermaid
@@ -386,6 +372,9 @@ import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 3
 };
 const value = externalFunction();
+export { value } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 5
@@ -397,6 +386,9 @@ import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 4
 };
 const value2 = externalObject.propertyWithGetter;
+export { value2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 6
@@ -428,6 +420,9 @@ import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 6
 };
 const value3 = externalFunction();
+export { value3 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 8
@@ -445,6 +440,9 @@ const shared = {
     value,
     value2,
     value3
+};
+export { shared } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
 };
 
 ```
@@ -553,6 +551,9 @@ import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 3
 };
 const value = externalFunction();
+export { value } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 5
@@ -564,6 +565,9 @@ import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 4
 };
 const value2 = externalObject.propertyWithGetter;
+export { value2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 6
@@ -595,6 +599,9 @@ import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 6
 };
 const value3 = externalFunction();
+export { value3 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 8
@@ -612,6 +619,9 @@ const shared = {
     value,
     value2,
     value3
+};
+export { shared } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
 };
 
 ```

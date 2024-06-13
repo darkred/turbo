@@ -121,23 +121,21 @@ graph TD
     Item10["export func"];
     Item11;
     Item11["export shared"];
-    Item1 -.-> Item1;
     Item3 --> Item1;
-    Item4 -.-> Item4;
     Item4 --> Item3;
-    Item4 -.-> Item1;
-    Item5 -.-> Item5;
     Item5 --> Item3;
     Item5 --> Item4;
-    Item5 -.-> Item1;
-    Item6 --> Item1;
     Item6 --> Item3;
-    Item6 -.-> Item6;
+    Item6 --> Item1;
+    Item7 --> Item6;
     Item7 --> Item1;
     Item7 --> Item3;
-    Item7 --> Item6;
     Item7 --> Item4;
     Item7 --> Item5;
+    Item9 --> Item7;
+    Item9 --> Item1;
+    Item10 --> Item2;
+    Item11 --> Item6;
 ```
 # Phase 3
 ```mermaid
@@ -157,27 +155,23 @@ graph TD
     Item10["export func"];
     Item11;
     Item11["export shared"];
-    Item1 -.-> Item1;
     Item3 --> Item1;
-    Item4 -.-> Item4;
     Item4 --> Item3;
-    Item4 -.-> Item1;
-    Item5 -.-> Item5;
     Item5 --> Item3;
     Item5 --> Item4;
-    Item5 -.-> Item1;
-    Item6 --> Item1;
     Item6 --> Item3;
-    Item6 -.-> Item6;
+    Item6 --> Item1;
+    Item7 --> Item6;
     Item7 --> Item1;
     Item7 --> Item3;
-    Item7 --> Item6;
     Item7 --> Item4;
     Item7 --> Item5;
-    Item2 --> Item1;
-    Item2 --> Item3;
-    Item2 --> Item6;
+    Item9 --> Item7;
+    Item9 --> Item1;
+    Item10 --> Item2;
+    Item11 --> Item6;
     Item2 --> Item7;
+    Item2 -.-> Item9;
 ```
 # Phase 4
 ```mermaid
@@ -197,37 +191,27 @@ graph TD
     Item10["export func"];
     Item11;
     Item11["export shared"];
-    Item1 -.-> Item1;
     Item3 --> Item1;
-    Item4 -.-> Item4;
     Item4 --> Item3;
-    Item4 -.-> Item1;
-    Item5 -.-> Item5;
     Item5 --> Item3;
     Item5 --> Item4;
-    Item5 -.-> Item1;
-    Item6 --> Item1;
     Item6 --> Item3;
-    Item6 -.-> Item6;
+    Item6 --> Item1;
+    Item7 --> Item6;
     Item7 --> Item1;
     Item7 --> Item3;
-    Item7 --> Item6;
     Item7 --> Item4;
     Item7 --> Item5;
-    Item2 --> Item1;
-    Item2 --> Item3;
-    Item2 --> Item6;
+    Item9 --> Item7;
+    Item9 --> Item1;
+    Item10 --> Item2;
+    Item11 --> Item6;
     Item2 --> Item7;
+    Item2 -.-> Item9;
     Item8 --> Item3;
     Item8 --> Item4;
     Item8 --> Item5;
     Item8 --> Item7;
-    Item9 --> Item1;
-    Item9 --> Item3;
-    Item9 --> Item6;
-    Item9 --> Item7;
-    Item10 --> Item2;
-    Item11 --> Item6;
 ```
 # Final
 ```mermaid
@@ -246,26 +230,20 @@ graph TD
     N0 --> N6;
     N0 --> N7;
     N0 --> N9;
-    N1 --> N4;
-    N1 --> N5;
-    N1 --> N8;
     N1 --> N9;
-    N2 --> N4;
-    N2 --> N5;
-    N2 --> N8;
+    N1 --> N4;
     N2 --> N9;
+    N2 --> N1;
     N3 --> N8;
     N5 --> N4;
     N6 --> N5;
-    N6 --> N4;
     N7 --> N5;
     N7 --> N6;
-    N7 --> N4;
-    N8 --> N4;
     N8 --> N5;
+    N8 --> N4;
+    N9 --> N8;
     N9 --> N4;
     N9 --> N5;
-    N9 --> N8;
     N9 --> N6;
     N9 --> N7;
 ```
@@ -307,34 +285,22 @@ import "__TURBOPACK_PART__" assert {
 ```
 ## Part 1
 ```js
-import { order } from "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 4
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 5
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 8
-};
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 9
+};
+import { order } from "__TURBOPACK_PART__" assert {
+    __turbopack_part__: 4
 };
 export { order };
 
 ```
 ## Part 2
 ```js
-import { order } from "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 4
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 5
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 8
-};
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 9
+};
+import "__TURBOPACK_PART__" assert {
+    __turbopack_part__: 1
 };
 export { func };
 function func() {
@@ -356,6 +322,9 @@ export { shared };
 ## Part 4
 ```js
 const order = [];
+export { order } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 5
@@ -371,10 +340,10 @@ order.push("a");
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 5
 };
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 4
-};
 const x1 = externalFunction();
+export { x1 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 7
@@ -385,35 +354,38 @@ import "__TURBOPACK_PART__" assert {
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 6
 };
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 4
-};
 const x2 = externalFunction();
+export { x2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 8
 ```js
-import { order } from "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 4
-};
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 5
 };
+import { order } from "__TURBOPACK_PART__" assert {
+    __turbopack_part__: 4
+};
 const shared = {
     effect: order.push("b")
+};
+export { shared } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
 };
 
 ```
 ## Part 9
 ```js
+import "__TURBOPACK_PART__" assert {
+    __turbopack_part__: 8
+};
 import { order } from "__TURBOPACK_PART__" assert {
     __turbopack_part__: 4
 };
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 5
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 8
 };
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 6
@@ -479,32 +451,17 @@ import "__TURBOPACK_PART__" assert {
 ```
 ## Part 1
 ```js
-import { order } from "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 4
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 5
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 8
-};
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 9
+};
+import { order } from "__TURBOPACK_PART__" assert {
+    __turbopack_part__: 4
 };
 export { order };
 
 ```
 ## Part 2
 ```js
-import { order } from "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 4
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 5
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 8
-};
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 9
 };
@@ -528,6 +485,9 @@ export { shared };
 ## Part 4
 ```js
 const order = [];
+export { order } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 5
@@ -544,6 +504,9 @@ import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 5
 };
 const x1 = externalFunction();
+export { x1 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 7
@@ -555,31 +518,37 @@ import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 6
 };
 const x2 = externalFunction();
+export { x2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 8
 ```js
-import { order } from "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 4
-};
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 5
 };
+import { order } from "__TURBOPACK_PART__" assert {
+    __turbopack_part__: 4
+};
 const shared = {
     effect: order.push("b")
+};
+export { shared } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
 };
 
 ```
 ## Part 9
 ```js
+import "__TURBOPACK_PART__" assert {
+    __turbopack_part__: 8
+};
 import { order } from "__TURBOPACK_PART__" assert {
     __turbopack_part__: 4
 };
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 5
-};
-import "__TURBOPACK_PART__" assert {
-    __turbopack_part__: 8
 };
 import "__TURBOPACK_PART__" assert {
     __turbopack_part__: 6

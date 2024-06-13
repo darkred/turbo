@@ -61,7 +61,8 @@ graph TD
     Item5["export effects"];
     Item6;
     Item6["export effect"];
-    Item2 -.-> Item2;
+    Item5 --> Item2;
+    Item6 --> Item3;
 ```
 # Phase 3
 ```mermaid
@@ -75,8 +76,10 @@ graph TD
     Item5["export effects"];
     Item6;
     Item6["export effect"];
-    Item2 -.-> Item2;
+    Item5 --> Item2;
+    Item6 --> Item3;
     Item3 --> Item2;
+    Item3 -.-> Item5;
 ```
 # Phase 4
 ```mermaid
@@ -90,11 +93,11 @@ graph TD
     Item5["export effects"];
     Item6;
     Item6["export effect"];
-    Item2 -.-> Item2;
-    Item3 --> Item2;
-    Item4 --> Item1;
     Item5 --> Item2;
     Item6 --> Item3;
+    Item3 --> Item2;
+    Item3 -.-> Item5;
+    Item4 --> Item1;
 ```
 # Final
 ```mermaid
@@ -105,6 +108,7 @@ graph TD
     N3["Items: [ItemId(1, VarDeclarator(0))]"];
     N1 --> N3;
     N2 --> N3;
+    N2 --> N1;
 ```
 # Entrypoints
 
@@ -141,6 +145,9 @@ export { effects };
 import { effects } from "__TURBOPACK_PART__" assert {
     __turbopack_part__: 3
 };
+import "__TURBOPACK_PART__" assert {
+    __turbopack_part__: 1
+};
 export { effect };
 function effect(name) {
     effects.push(name);
@@ -153,6 +160,9 @@ export { effect } from "__TURBOPACK_VAR__" assert {
 ## Part 3
 ```js
 const effects = [];
+export { effects } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Merged (module eval)
@@ -208,6 +218,9 @@ export { effect } from "__TURBOPACK_VAR__" assert {
 ## Part 3
 ```js
 const effects = [];
+export { effects } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Merged (module eval)

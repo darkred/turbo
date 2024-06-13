@@ -171,9 +171,7 @@ graph TD
     Item7;
     Item7["export run"];
     Item3 --> Item2;
-    Item3 -.-> Item3;
-    Item4 -.-> Item4;
-    Item5 -.-> Item5;
+    Item7 --> Item5;
 ```
 # Phase 3
 ```mermaid
@@ -188,9 +186,7 @@ graph TD
     Item7;
     Item7["export run"];
     Item3 --> Item2;
-    Item3 -.-> Item3;
-    Item4 -.-> Item4;
-    Item5 -.-> Item5;
+    Item7 --> Item5;
     Item5 --> Item3;
     Item5 --> Item4;
 ```
@@ -207,13 +203,10 @@ graph TD
     Item7;
     Item7["export run"];
     Item3 --> Item2;
-    Item3 -.-> Item3;
-    Item4 -.-> Item4;
-    Item5 -.-> Item5;
+    Item7 --> Item5;
     Item5 --> Item3;
     Item5 --> Item4;
     Item6 --> Item1;
-    Item7 --> Item5;
 ```
 # Final
 ```mermaid
@@ -336,6 +329,15 @@ const run = async (moduleFactory)=>{
                 }
         }
     }
+};
+export { IPC } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { ipc } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { queue } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
 };
 export { run } from "__TURBOPACK_VAR__" assert {
     __turbopack_var__: true
@@ -463,6 +465,15 @@ const run = async (moduleFactory)=>{
                 }
         }
     }
+};
+export { IPC } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { ipc } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { queue } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
 };
 export { run } from "__TURBOPACK_VAR__" assert {
     __turbopack_var__: true

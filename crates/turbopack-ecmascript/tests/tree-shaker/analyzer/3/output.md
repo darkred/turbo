@@ -203,6 +203,9 @@ graph TD
     Item11 -.-> Item3;
     Item11 -.-> Item9;
     Item11 -.-> Item7;
+    Item13 --> Item4;
+    Item14 --> Item6;
+    Item15 --> Item8;
 ```
 # Phase 3
 ```mermaid
@@ -245,6 +248,9 @@ graph TD
     Item11 -.-> Item3;
     Item11 -.-> Item9;
     Item11 -.-> Item7;
+    Item13 --> Item4;
+    Item14 --> Item6;
+    Item15 --> Item8;
     Item4 --> Item5;
     Item5 --> Item6;
     Item5 --> Item1;
@@ -296,6 +302,9 @@ graph TD
     Item11 -.-> Item3;
     Item11 -.-> Item9;
     Item11 -.-> Item7;
+    Item13 --> Item4;
+    Item14 --> Item6;
+    Item15 --> Item8;
     Item4 --> Item5;
     Item5 --> Item6;
     Item5 --> Item1;
@@ -307,9 +316,6 @@ graph TD
     Item9 --> Item7;
     Item12 --> Item10;
     Item12 --> Item11;
-    Item13 --> Item4;
-    Item14 --> Item6;
-    Item15 --> Item8;
 ```
 # Final
 ```mermaid
@@ -417,6 +423,15 @@ function c1_2() {
 function c1_3() {
     return c1_1(d2);
 }
+export { c1_1 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { c1_2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { c1_3 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 5
@@ -433,21 +448,39 @@ function c2_2() {
 function c2_3() {
     return c2_1();
 }
+export { c2_1 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { c2_2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { c2_3 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 6
 ```js
 function d1() {}
+export { d1 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 7
 ```js
 function d2() {}
+export { d2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 8
 ```js
 function d3() {}
+export { d3 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Merged (module eval)
@@ -545,6 +578,15 @@ function c1_2() {
 function c1_3() {
     return c1_1(d2);
 }
+export { c1_1 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { c1_2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { c1_3 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 5
@@ -561,21 +603,39 @@ function c2_2() {
 function c2_3() {
     return c2_1();
 }
+export { c2_1 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { c2_2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
+export { c2_3 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 6
 ```js
 function d1() {}
+export { d1 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 7
 ```js
 function d2() {}
+export { d2 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 8
 ```js
 function d3() {}
+export { d3 } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Merged (module eval)

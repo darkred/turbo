@@ -158,8 +158,9 @@ graph TD
     Item9["export sendMessage"];
     Item10;
     Item10["export connectHMR"];
-    Item1 -.-> Item1;
-    Item2 -.-> Item2;
+    Item8 --> Item4;
+    Item9 --> Item5;
+    Item10 --> Item6;
 ```
 # Phase 3
 ```mermaid
@@ -178,8 +179,9 @@ graph TD
     Item9["export sendMessage"];
     Item10;
     Item10["export connectHMR"];
-    Item1 -.-> Item1;
-    Item2 -.-> Item2;
+    Item8 --> Item4;
+    Item9 --> Item5;
+    Item10 --> Item6;
     Item4 --> Item2;
     Item5 --> Item1;
     Item6 --> Item1;
@@ -203,16 +205,14 @@ graph TD
     Item9["export sendMessage"];
     Item10;
     Item10["export connectHMR"];
-    Item1 -.-> Item1;
-    Item2 -.-> Item2;
+    Item8 --> Item4;
+    Item9 --> Item5;
+    Item10 --> Item6;
     Item4 --> Item2;
     Item5 --> Item1;
     Item6 --> Item1;
     Item6 --> Item2;
     Item6 --> Item3;
-    Item8 --> Item4;
-    Item9 --> Item5;
-    Item10 --> Item6;
 ```
 # Final
 ```mermaid
@@ -338,6 +338,9 @@ function connectHMR(options) {
     }
     init();
 }
+export { getSocketProtocol } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 export { connectHMR } from "__TURBOPACK_VAR__" assert {
     __turbopack_var__: true
 };
@@ -346,11 +349,17 @@ export { connectHMR } from "__TURBOPACK_VAR__" assert {
 ## Part 4
 ```js
 let source;
+export { source } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 5
 ```js
 const eventCallbacks = [];
+export { eventCallbacks } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Merged (module eval)
@@ -468,6 +477,9 @@ function connectHMR(options) {
     }
     init();
 }
+export { getSocketProtocol } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 export { connectHMR } from "__TURBOPACK_VAR__" assert {
     __turbopack_var__: true
 };
@@ -476,11 +488,17 @@ export { connectHMR } from "__TURBOPACK_VAR__" assert {
 ## Part 4
 ```js
 let source;
+export { source } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Part 5
 ```js
 const eventCallbacks = [];
+export { eventCallbacks } from "__TURBOPACK_VAR__" assert {
+    __turbopack_var__: true
+};
 
 ```
 ## Merged (module eval)
